@@ -64,3 +64,7 @@ yarn-error.log
 
 # testing
 /coverage
+
+# formating
+.eslintrc.js
+.prettierrc.js
