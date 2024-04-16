@@ -1,6 +1,6 @@
 import {Text, View, StatusBar} from 'react-native';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AllExpenses from './src/screens/AllExpenses';
@@ -8,11 +8,19 @@ import ManageExpense from './src/screens/ManageExpense';
 import RecentExpenses from './src/screens/RecentExpenses';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {GlobalStyles} from './src/constants/customStyles';
+import IconButton from './src/components/UI/IconButton';
+import ExpensesContextProvider from './src/store/expenses-context';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
 const ExpensesOverview = () => {
+  const navigation = useNavigation();
+
+  const addIconPressHandler = () => {
+    navigation.navigate('ManageExpense');
+  };
+
   return (
     <React.Fragment>
       <BottomTabs.Navigator
@@ -20,7 +28,17 @@ const ExpensesOverview = () => {
           headerStyle: {backgroundColor: GlobalStyles.colors.primary500},
           headerTintColor: 'white',
           tabBarStyle: {backgroundColor: GlobalStyles.colors.primary500},
-          tabBarActiveTintColor: GlobalStyles.colors.accent500
+          tabBarActiveTintColor: GlobalStyles.colors.accent500,
+          headerRight: ({tintColor}) => {
+            return (
+              <IconButton
+                onPress={addIconPressHandler}
+                color={tintColor}
+                size={24}
+                name="pluscircleo"
+              />
+            );
+          }
         }}>
         <BottomTabs.Screen
           name="RecentExpenses"
@@ -52,17 +70,29 @@ const ExpensesOverview = () => {
 const App = () => {
   return (
     <React.Fragment>
-      <StatusBar barStyle="dark-content" />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="ExpenseOverview"
-            component={ExpensesOverview}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen name="ManageExpense" component={ManageExpense} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <StatusBar barStyle="light-content" />
+      <ExpensesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: {backgroundColor: GlobalStyles.colors.primary500},
+              headerTintColor: 'white'
+            }}>
+            <Stack.Screen
+              name="ExpenseOverview"
+              component={ExpensesOverview}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="ManageExpense"
+              component={ManageExpense}
+              options={{
+                presentation: 'modal'
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ExpensesContextProvider>
     </React.Fragment>
   );
 };
