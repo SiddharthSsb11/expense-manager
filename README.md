@@ -1,4 +1,32 @@
+# Expense Manager
+
+A user-friendly mobile application built with React Native to help you effortlessly track and manage your finances. 
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+
+## Features
+- **Clear Overview- Recent Expenses**: Gain instant insights into your spending habits with a comprehensive recent expenses list at the app's forefront.
+- **Complete Expense History - All Expenses**: Access a detailed record of all your expenses for thorough financial analysis.
+- **Effortless Expense Management -  Add new expenses - edit existing**: Add new expenses and seamlessly edit existing ones, empowering you to stay on top of your finances.
+- **Robust Input Validation** : Experience a smooth user experience with intelligent input validation that prevents errors and ensures data integrity.
+- **Nested Navigation**: (**Native Stack**, **Bottom-Tab**, **Stack** ) 
+- **Store Data Management**
+- **Efficient Data Handling - Firebase** -  Leverage the power of Firebase, a robust backend cloud solution, for persistent storage of your expense data, guaranteeing its accessibility across devices.
+- **Enhanced User Experience - spinner loader**: Enjoy a smooth and responsive user interface with a spinner loader that displays during data fetching, keeping you informed during the process.
+- Custom Pressable Button Component
+- FlatList for displaying your expenses lists
+- Utilizes latest JavaScript and React features
+- Styled with React Native StyleSheet
+- Implemented using React Hooks
+- Cross-platform code for Android and iOS
+- Latest features of JavaScript i.e. ES8 is used
+
+
+
+### Few Screenshots
+
+<img src="./src/screenshots/1.png" alt="AllExpenses" width="240" height="550" /> <img src="./src/screenshots/2.png" alt="RecentExpenses" width="240" height="550" /> <img src="./src/screenshots/3.png" alt="EditExpenses" width="240" height="550"/> <img src="./src/screenshots/4.png" alt="AddExpenses" width="240" height="550"/>
+
 
 # Getting Started
 
@@ -45,35 +73,3 @@ yarn ios
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
